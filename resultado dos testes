@@ -1,0 +1,25 @@
+## Resultados dos testes
+
+**Teste com Lock:** o programa registrou cinco compras bem-sucedidas, três compras recusadas e estoque final igual a zero. Isso demonstra que o bloqueio impediu que mais de cinco unidades fossem vendidas.
+
+**Teste sem Lock:** o programa registrou oito compras, apesar de o estoque inicial ser de apenas cinco unidades. Todos os clientes leram o estoque antes das atualizações, e o valor final ficou em -3. Isso demonstra uma condição de corrida.
+
+**1. O estoque final ficou coerente com o número de compras?**
+
+Com Lock, sim. Foram vendidas cinco unidades e o estoque terminou em zero. Sem Lock, não. O sistema registrou oito compras para apenas cinco unidades disponíveis.
+
+**2. O que aconteceu quando o programa foi executado sem proteção?**
+
+As threads verificaram o estoque simultaneamente e todas encontraram cinco unidades disponíveis. Como não havia sincronização, as oito compras foram registradas, provocando estoque negativo.
+
+**3. Por que o resultado demonstra a importância da concorrência segura?**
+
+Porque várias threads podem acessar e modificar o mesmo dado ao mesmo tempo. O Lock garante que a verificação e a atualização do estoque sejam realizadas de forma protegida, evitando vendas acima da quantidade disponível.
+
+**4. Como isso se aplica a lojas virtuais?**
+
+Em uma loja virtual, vários clientes podem tentar comprar o último produto ao mesmo tempo. O sistema precisa coordenar essas operações para impedir vendas duplicadas e manter o estoque correto.
+
+**5. Como sistemas distribuídos podem resolver esse problema?**
+
+Podem utilizar transações de banco de dados, bloqueios, controle de concorrência otimista e atualizações atômicas, garantindo que o estoque seja validado e atualizado com segurança mesmo com múltiplas solicitações simultâneas.
