@@ -1,0 +1,63 @@
+1. Resultado com Lock
+Execução concluída
+
+5
+Compras realizadas
+
+3
+Compras recusadas
+
+0
+Estoque final
+
+Saída completa:
+Cliente 1 encontrou 5 unidade(s)
+Cliente 1 comprou. Restam: 4
+Cliente 2 encontrou 4 unidade(s)
+Cliente 2 comprou. Restam: 3
+Cliente 3 encontrou 3 unidade(s)
+Cliente 3 comprou. Restam: 2
+Cliente 4 encontrou 2 unidade(s)
+Cliente 4 comprou. Restam: 1
+Cliente 5 encontrou 1 unidade(s)
+Cliente 5 comprou. Restam: 0
+Cliente 6 não conseguiu comprar: estoque esgotado
+Cliente 7 não conseguiu comprar: estoque esgotado
+Cliente 8 não conseguiu comprar: estoque esgotado
+Estoque final: 0
+
+2. Resultado sem Lock
+Condição de corrida observada
+
+8
+Compras registradas
+
+
+0
+Compras recusadas
+
+
+-3
+Estoque final
+
+
+
+
+Saída completa:
+Cliente 1 encontrou 5 unidade(s)
+Cliente 2 encontrou 5 unidade(s)
+Cliente 3 encontrou 5 unidade(s)
+Cliente 4 encontrou 5 unidade(s)
+Cliente 5 encontrou 5 unidade(s)
+Cliente 6 encontrou 5 unidade(s)
+Cliente 7 encontrou 5 unidade(s)
+Cliente 8 encontrou 5 unidade(s)
+Cliente 1 comprou. Restam: 4
+Cliente 2 comprou. Restam: 3
+Cliente 3 comprou. Restam: 2
+Cliente 4 comprou. Restam: 1
+Cliente 5 comprou. Restam: 0
+Cliente 6 comprou. Restam: -1
+Cliente 7 comprou. Restam: -2
+Cliente 8 comprou. Restam: -3
+Estoque final: -3
